@@ -27,21 +27,14 @@ public class Cenario {
   // Cenario
   public Cenario(AssetManager assetManager, Node rootNode) {
 
-    //Grama
+  //Grama
   quad = new Box(700,0.1f,700);
   grama = new Geometry("Grama", quad);
   grama.setLocalTranslation(0, 0, 0);
   matG = new Material(assetManager, "Common/MatDefs/Misc/Unshaded.j3md");
   matG.setTexture("ColorMap", assetManager.loadTexture("Textures/grama.jpg"));
   grama.setMaterial(matG);
-
-    // alvo
-    
-    
-    
-    
-    
-    //ceu
+  //CEU
   ceu = SkyFactory.createSky(assetManager,"Textures/sky.jpeg", SkyFactory.EnvMapType.EquirectMap);
   rootNode.attachChild(ceu);
   rootNode.attachChild(grama);
