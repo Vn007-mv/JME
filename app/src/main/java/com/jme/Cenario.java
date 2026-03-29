@@ -22,11 +22,8 @@ public class Cenario {
   private Box quad;
   private Material matG;
   private Spatial ceu;
-  private Quad alvo1;
-  private Material matAlvo;
-  private Geometry alvoPlano;
-  private Geometry alvoPlano2;
-  private Geometry  alvoPlano3;
+  
+
   // Cenario
   public Cenario(AssetManager assetManager, Node rootNode) {
 
@@ -39,27 +36,14 @@ public class Cenario {
   grama.setMaterial(matG);
 
     // alvo
-    alvo1 = new Quad(75,75);
-    alvoPlano = new Geometry("Alvo", alvo1);
-    matAlvo = new Material(assetManager, "Common/MatDefs/Misc/Unshaded.j3md");
-    matAlvo.setTexture("ColorMap", assetManager.loadTexture("Textures/alvotxt.jpg"));
-    alvoPlano.setMaterial(matAlvo);
     
     
-    alvoPlano2 =  alvoPlano.clone();
-    alvoPlano3 =  alvoPlano.clone();
     
-    alvoPlano.setLocalTranslation(-100f, 15, -50);
-    alvoPlano2.setLocalTranslation(0f, 15, -75);
-    alvoPlano3.setLocalTranslation(100f, 15, -50);
     
     
     //ceu
   ceu = SkyFactory.createSky(assetManager,"Textures/sky.jpeg", SkyFactory.EnvMapType.EquirectMap);
   rootNode.attachChild(ceu);
-  rootNode.attachChild(alvoPlano);
-  rootNode.attachChild(alvoPlano2);
-  rootNode.attachChild(alvoPlano3);
   rootNode.attachChild(grama);
   }
 }
